@@ -95,7 +95,7 @@ function formatTextReport(imagePath: string, report: DominantColourReport): stri
   report.colours.forEach((result, index) => {
     const [red, green, blue] = result.colour;
     lines.push(
-      `${index + 1}. rgb(${red}, ${green}, ${blue}) - ${result.count} pixels (${result.percentage.toFixed(2)}%)`
+      `${index + 1}. rgb(${red}, ${green}, ${blue}) - ${result.count} pixels (${result.percentage.toFixed(2)}%) - interpreted as ${result.description}`
     );
   });
 

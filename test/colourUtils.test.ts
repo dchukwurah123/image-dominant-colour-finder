@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   clampChannel,
+  describeRgbColour,
   keyToRgb,
   quantiseChannel,
   quantiseRgb,
@@ -36,5 +37,16 @@ describe('colourUtils', () => {
     expect(() => keyToRgb('not-a-colour')).toThrow('Invalid RGB key');
     expect(() => keyToRgb('1,2')).toThrow('Invalid RGB key');
     expect(() => keyToRgb('1,2,300')).toThrow('Invalid RGB key');
+  });
+
+  it('describes broad RGB colour families', () => {
+    expect(describeRgbColour([255, 0, 0])).toBe('red');
+    expect(describeRgbColour([0, 255, 0])).toBe('green');
+    expect(describeRgbColour([0, 0, 255])).toBe('blue');
+    expect(describeRgbColour([0, 220, 250])).toBe('bright cyan / aqua blue');
+    expect(describeRgbColour([255, 255, 255])).toBe('white');
+    expect(describeRgbColour([0, 0, 0])).toBe('black');
+    expect(describeRgbColour([128, 128, 128])).toBe('grey');
+    expect(describeRgbColour([0, 0, 80])).toBe('dark blue');
   });
 });

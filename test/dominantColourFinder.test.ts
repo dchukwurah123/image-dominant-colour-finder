@@ -40,6 +40,7 @@ describe('dominantColourFinder', () => {
 
     expect(report.colours[0]).toMatchObject({
       colour: [250, 0, 0],
+      description: 'red',
       count: 3
     });
   });

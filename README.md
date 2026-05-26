@@ -57,7 +57,7 @@ Pixels: 16/16 processed (0 skipped transparent)
 Bucket size: 10
 Alpha threshold: 128
 Dominant colours:
-1. rgb(250, 0, 0) - 12 pixels (75.00%)
+1. rgb(250, 0, 0) - 12 pixels (75.00%) - interpreted as red
 ```
 
 JSON output includes the top colours plus report metadata:
@@ -68,6 +68,7 @@ JSON output includes the top colours plus report metadata:
   "colours": [
     {
       "colour": [250, 0, 0],
+      "description": "red",
       "count": 12,
       "percentage": 75
     }
@@ -88,6 +89,8 @@ JSON output includes the top colours plus report metadata:
 - `--bucket-size <number>` rounds RGB values to the nearest multiple. Default: `10`.
 - `--alpha-threshold <number>` skips pixels where alpha is below this value. Default: `128`.
 - `--json` prints the full report as JSON.
+
+The natural-language colour name is an approximate interpretation for readability. The source of truth remains the RGB value.
 
 ## Algorithm
 
@@ -124,6 +127,7 @@ Vitest covers the pure functions and deterministic in-memory pixel data:
 
 - Channel clamping.
 - Quantisation to nearest buckets.
+- Natural-language colour descriptions.
 - 255 clamping.
 - RGB key conversion and invalid keys.
 - Invalid options and malformed image data.

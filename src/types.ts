@@ -15,6 +15,7 @@ export interface DominantColourOptions {
 
 export interface DominantColourResult {
   colour: Rgb;
+  description: string;
   count: number;
   percentage: number;
 }

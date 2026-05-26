@@ -30,6 +30,13 @@ await writeJpeg('near-red-jpeg.jpg', 4, 4, [
   ...repeat([0, 0, 250, 255], 3)
 ]);
 
+await writeJpeg('multi-color-mostly-blue.jpg', 10, 10, [
+  ...repeat([0, 60, 240, 255], 60),
+  ...repeat([0, 220, 250, 255], 20),
+  ...repeat([250, 0, 0, 255], 10),
+  ...repeat([0, 250, 0, 255], 10)
+]);
+
 console.log('Generated sample images in sample-images/');
 
 function repeat(pixel: Rgba, count: number): Rgba[] {

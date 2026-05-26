@@ -1,5 +1,6 @@
 import {
   compareRgbAscending,
+  describeRgbColour,
   keyToRgb,
   quantiseRgb,
   rgbToKey,
@@ -129,6 +130,7 @@ function createResult(
 ): DominantColourResult {
   return {
     colour,
+    description: describeRgbColour(colour),
     count,
     percentage: processedPixels === 0 ? 0 : (count / processedPixels) * 100
   };
