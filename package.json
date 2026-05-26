@@ -1,0 +1,29 @@
+{
+  "name": "image-dominant-colour-finder",
+  "version": "1.0.0",
+  "description": "A small TypeScript Node.js CLI for finding the dominant colour of an image.",
+  "type": "module",
+  "bin": {
+    "dominant-colour": "./dist/src/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dominant": "node --import tsx src/cli.ts",
+    "generate-fixtures": "node --import tsx scripts/generate-fixtures.ts",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.9"
+  }
+}
